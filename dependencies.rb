@@ -6,6 +6,7 @@ gems = %w(
   active_record
   active_support
   pg
+  yaml
 )
 
-
+gems.each { |gem| require gem }

@@ -1,5 +1,10 @@
 require './dependencies'
 
-application_lib_dir = Dir['./app/helpers/*.rb'].sort + Dir['./app/models/**/*.rb'].sort + Dir['./app/controllers/**/*.rb']
+# Require Configuration File
+CONFIG = YAML.load_file('./config/api_configurations.yml')
 
-application_lib_dir.each { |file| require file }
+# Require Application Libraries (MVC Loader)
+APPLICATION_LIB_DIR = Dir['./app/helpers/*.rb'].sort + Dir['./app/models/**/*.rb'].sort + Dir['./app/controllers/**/*.rb']
+APPLICATION_LIB_DIR.each { |file| require file }
+
+
