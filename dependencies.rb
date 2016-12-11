@@ -8,4 +8,4 @@ gems = %w(
   pg
 )
 
-gems.each { |gem| require gem }
+
