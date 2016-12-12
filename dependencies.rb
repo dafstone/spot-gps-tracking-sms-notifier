@@ -10,6 +10,7 @@ gems = %w(
   pg
   yaml
   sqlite3
+  twilio-ruby
 )
 
 gems.each { |gem| require gem }
