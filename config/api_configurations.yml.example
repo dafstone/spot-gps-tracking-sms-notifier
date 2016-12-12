@@ -1,1 +1,6 @@
 :spot_feed_id: SPOT_FEED_ID
+
+:twilio:
+  :account_sid: account_sid
+  :auth_token: auth_token
+  :outgoing_number: outgoing_number
