@@ -14,4 +14,14 @@ APPLICATION_LIB_DIR.each { |file| require file }
 
 def testing_import
   @smp.import_spot_messages(@songbird_locations.messages)
+  @smp.format_new_messages_to_sms
+end
+
+def test_send_messages
+  @smp.send_all_pending_to_destination(number, @twilio_service)
+
+  numbers = CONFIG[:notification_numbers]
+  numbers.each do |number|
+    @smp.send_all_pending_to_destination(number, @twilio_service)
+  end
 end

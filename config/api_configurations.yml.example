@@ -6,3 +6,7 @@
   :outgoing_number: outgoing_number
 
 :ship_name: "ship_name" 
+
+:notification_numbers:
+  - '+<first number>'
+  - '+<second number>'

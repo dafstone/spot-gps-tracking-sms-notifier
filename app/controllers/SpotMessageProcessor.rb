@@ -27,12 +27,18 @@ class SpotMessageProcessor
     sms_to_send = Array.new
     @new_messages.each do |message_id|
       current_message = SpotMessage.find_by_message_id(message_id)
-      time_format = "%a, %b %e at %I:%M%p"
+      time_format = "%a, %b %e at %I:%M%P"
 
-      message_text = "#{SHIP_NAME} check in at #{current_message[:message_time].strftime(time_format)} - Type: #{current_message[:message_type]} Lat/Long: #{current_message[:latitude].to_s} #{current_message[:longitude].to_s}"
+      message_text = "#{SHIP_NAME} check in at #{current_message[:message_time].getlocal.strftime(time_format)} - Type: #{current_message[:message_type]} Lat/Long: #{current_message[:latitude].to_s} #{current_message[:longitude].to_s}"
 
       sms_to_send.push message_text
     end
    @sms_payload = sms_to_send 
+  end
+
+  def send_all_pending_to_destination(dest_number, twilio_service)
+    @sms_payload.each do |sms|
+      twilio_service.send_message(sms,dest_number)
+    end
   end
 end
