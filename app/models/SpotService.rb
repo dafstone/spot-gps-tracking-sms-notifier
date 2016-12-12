@@ -2,7 +2,7 @@ class SpotService
   require 'net/http'
   require 'json'
 
-  attr_reader :spot_raw_response, :messages, :current_time
+  attr_reader :spot_raw_response, :messages
 
   def initialize(params = {})
     spot_feed_id = params.fetch(:spot_feed_id)
