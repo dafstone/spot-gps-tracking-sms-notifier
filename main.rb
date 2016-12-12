@@ -18,10 +18,8 @@ def testing_import
 end
 
 def test_send_messages
-  @smp.send_all_pending_to_destination(number, @twilio_service)
-
   numbers = CONFIG[:notification_numbers]
-  numbers.each do |number|
-    @smp.send_all_pending_to_destination(number, @twilio_service)
+  numbers.each do |dest_number|
+    @smp.send_all_pending_to_destination(dest_number, @twilio_service)
   end
 end
