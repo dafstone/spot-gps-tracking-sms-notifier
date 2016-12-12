@@ -1,2 +1,2 @@
-class SpotMessage
+class SpotMessage < ActiveRecord::Base
 end
