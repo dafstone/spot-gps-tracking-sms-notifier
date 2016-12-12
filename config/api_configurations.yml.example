@@ -4,3 +4,5 @@
   :account_sid: account_sid
   :auth_token: auth_token
   :outgoing_number: outgoing_number
+
+:ship_name: "ship_name" 
