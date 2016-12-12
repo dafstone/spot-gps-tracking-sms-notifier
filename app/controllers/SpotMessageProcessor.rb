@@ -1,9 +1,10 @@
 class SpotMessageProcessor
 
-  attr_reader :new_messages
+  attr_reader :new_messages, :sms_payload
 
   def initialize
     @new_messages = Array.new
+    @sms_payload = Array.new
   end
 
   def import_spot_messages(messages)
@@ -32,6 +33,6 @@ class SpotMessageProcessor
 
       sms_to_send.push message_text
     end
-   return sms_to_send 
+   @sms_payload = sms_to_send 
   end
 end
