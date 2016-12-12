@@ -9,7 +9,8 @@ class SpotService
     spot_uri = URI("https://api.findmespot.com/spot-main-web/consumer/rest-api/2.0/public/feed/#{spot_feed_id}/message.json")
 
     @spot_raw_response = JSON.parse(Net::HTTP.get(spot_uri))["response"]
-    @messages = @spot_raw_response["feedMessageResponse"]["messages"]["message"]
+    @messages = fetch_messages
+
     @fetched_time = Time.now
   end
 
@@ -27,6 +28,19 @@ class SpotService
     feed_info[:fetched_time] = @fetched_time
 
     return feed_info
+  end
+
+  private
+
+  def fetch_messages
+    messages = @spot_raw_response["feedMessageResponse"]["messages"]["message"]
+    messages.each do |message|
+      message.keys.each do |key|
+        message[(key.to_sym rescue key) || key] = message.delete(key)
+      end
+    end
+
+    return messages
   end
 
 end
