@@ -1,0 +1,23 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: username
+  password:
+
+development:
+  <<: *defaults
+  database: spot_notifer_development
+  host: localhost
+
+test:
+  <<: *defaults
+  database: spot_notifer_test
+  host: localhost
+
+production:
+  <<: *defaults
+  database: spot_notifier_production
+  host: localhost
+  username: test_name
+  password:

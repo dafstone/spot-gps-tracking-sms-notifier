@@ -14,3 +14,6 @@ gems = %w(
 gems.each { |gem| require gem }
 
 $env = ENV['RACK_ENV']
+
+DB_CONFIG = YAML.load(File.open("config/database.yml"))
+ActiveRecord::Base.establish_connection DB_CONFIG[$env]
