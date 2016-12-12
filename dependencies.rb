@@ -9,6 +9,7 @@ gems = %w(
   active_support
   pg
   yaml
+  sqlite3
 )
 
 gems.each { |gem| require gem }

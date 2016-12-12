@@ -1,3 +1,4 @@
 config/api_configurations.yml
 config/database.yml
+db/*.sqlite3
 

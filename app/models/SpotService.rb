@@ -38,6 +38,7 @@ class SpotService
       message.keys.each do |key|
         message[(key.to_sym rescue key) || key] = message.delete(key)
       end
+      message[:dateTime] = DateTime.parse(message[:dateTime])
     end
 
     return messages
