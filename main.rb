@@ -8,9 +8,8 @@ APPLICATION_LIB_DIR = Dir['./app/helpers/*.rb'].sort + Dir['./app/models/**/*.rb
 APPLICATION_LIB_DIR.each { |file| require file }
 
 @songbird_locations = SpotService.new(spot_feed_id: CONFIG[:spot_feed_id])
+@smp = SpotMessageProcessor.new
 
 def testing_import
-  messages = @songbird_locations.messages
-  smp = SpotMessageProcessor.new
-  smp.import_spot_messages(messages)
+  @smp.import_spot_messages(@songbird_locations.messages)
 end
