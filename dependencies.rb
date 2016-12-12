@@ -1,3 +1,5 @@
+ENV['RACK_ENV'] ||= 'development'
+
 require 'rubygems'
 require 'bundler'
 
@@ -10,3 +12,5 @@ gems = %w(
 )
 
 gems.each { |gem| require gem }
+
+$env = ENV['RACK_ENV']
