@@ -7,3 +7,4 @@ gem 'pg'
 gem 'rake'
 gem 'sqlite3'
 gem 'twilio-ruby'
+gem 'whenever', :require => false
