@@ -2,7 +2,7 @@
 
 ## Background
 
-This December I had opportunity to sail with friends from NYC to Norfolk, VA on a 44 foot sloop called the songbird.  Two of us got off in Norfolk and they recrewed for a trip to the Virgin Islands, leaving only a SPOT beacon and a webpage to find them by.
+This December I had opportunity to sail with friends from NYC to Norfolk, VA on a 44 foot sloop called the songbird.  Two of us got off in Norfolk and they recrewed for a trip to the Virgin Islands, leaving only a SPOT ( http://www.findmespot.com/ ) beacon and a webpage to find them by.
 
 Wanting to keep better progress of their Journey, I whipped this up over the weekend.  This application:
 
