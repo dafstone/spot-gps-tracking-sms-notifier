@@ -8,7 +8,7 @@ namespace :db do
   end
 end
 
-namespace :nofifier do
+namespace :notifier do
   desc "Create and send new notifications"
   task :create_and_send do
 
