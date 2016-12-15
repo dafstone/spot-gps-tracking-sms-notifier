@@ -39,6 +39,7 @@ class SpotMessage < ActiveRecord::Base
 
     trip_current.each do |check_in|
       puts %Q{Time: #{check_in[:message_time].getlocal.strftime(time_format)}, 
+      Location: #{check_in.geoloc.ll}
       Distance Travelled: #{check_in.check_in_stats[:distance_travelled]}#{Geokit::default_units.to_s}
       Time Travelled: #{check_in.check_in_stats[:time_travelled]}hrs
       Avg speed: #{check_in.check_in_stats[:nms_per_hour]}nms/hour
