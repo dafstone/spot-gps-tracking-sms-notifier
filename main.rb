@@ -8,6 +8,8 @@ SHIP_NAME = CONFIG[:ship_name]
 APPLICATION_LIB_DIR = Dir['./app/helpers/*.rb'].sort + Dir['./app/models/**/*.rb'].sort + Dir['./app/controllers/**/*.rb']
 APPLICATION_LIB_DIR.each { |file| require file }
 
+Geokit::default_units = :nms
+
 @twilio_service = TwilioService.new(CONFIG[:twilio])
 @songbird_locations = SpotService.new(spot_feed_id: CONFIG[:spot_feed_id])
 @smp = SpotMessageProcessor.new

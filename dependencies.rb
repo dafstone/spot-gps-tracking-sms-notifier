@@ -11,6 +11,7 @@ gems = %w(
   yaml
   sqlite3
   twilio-ruby
+  geokit
 )
 
 gems.each { |gem| require gem }
