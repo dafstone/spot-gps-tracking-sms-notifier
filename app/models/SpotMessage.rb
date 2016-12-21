@@ -33,6 +33,12 @@ class SpotMessage < ActiveRecord::Base
     return stats
   end
 
+  def check_in_stats_str
+    stats_hash = self.check_in_stats
+    stats_string = "Since Last Check In - Dist: #{stats_hash[:distance_travelled]}#{Geokit::default_units.to_s} Time: #{stats_hash[:time_travelled]}hrs Avg Speed: #{stats_hash[:nms_per_hour]}nms/hour"
+    return stats_string
+  end
+
   def self.trip_stats
     trip_current = order_by_date_sent
     time_format = "%a, %b %e at %I:%M%P"

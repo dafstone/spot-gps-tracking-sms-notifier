@@ -29,7 +29,7 @@ class SpotMessageProcessor
       current_message = SpotMessage.find_by_message_id(message_id)
       time_format = "%a, %b %e at %I:%M%P"
 
-      message_text = "#{SHIP_NAME} check in at #{current_message[:message_time].getlocal.strftime(time_format)} - Type: #{current_message[:message_type]} Lat/Long: #{current_message[:latitude].to_s} #{current_message[:longitude].to_s}"
+      message_text = "#{SHIP_NAME} check in at #{current_message[:message_time].getlocal.strftime(time_format)} - Type: #{current_message[:message_type]} Lat/Long: #{current_message[:latitude].to_s} #{current_message[:longitude].to_s} #{current_message.check_in_stats_str}"
 
       sms_to_send.push message_text
     end
